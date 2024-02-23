@@ -1,0 +1,21 @@
+﻿{
+	"compileOnSave": true,
+	"compilerOptions": {
+		"outDir": "./wwwroot/scripts/",
+		"sourceMap": true,
+		"declaration": false,
+		"moduleResolution": "node",
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"target": "ES2022",
+		"lib": [
+			"ES2022",
+			"dom"
+		]
+
+	},
+
+	"exclude": [
+		"scripts/typing/qunit/qunit-1.16.d.ts"
+	]
+}
