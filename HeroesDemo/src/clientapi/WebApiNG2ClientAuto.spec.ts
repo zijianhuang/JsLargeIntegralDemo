@@ -2146,7 +2146,7 @@ describe('TextData API', () => {
 /**
  * With customized serialization on ASP.NET Core Web API
  */
-describe('Numbers API', () => {
+xdescribe('Numbers API', () => {
     let service: DemoWebApi_Controllers_Client.Numbers;
 
     beforeEach(async(() => {
@@ -2591,7 +2591,7 @@ describe('Numbers API', () => {
  *
  * JavaScript has difficulty in deal with number larger than 53-bit as JSON object.
  */
-xdescribe('Numbers API without customized serialization', () => {
+describe('Numbers API without customized serialization', () => {
     let service: DemoWebApi_Controllers_Client.Numbers;
 
     beforeEach(async(() => {
