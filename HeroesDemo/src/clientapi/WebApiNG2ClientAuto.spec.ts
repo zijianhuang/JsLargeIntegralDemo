@@ -2217,7 +2217,13 @@ describe('Numbers API', () => {
     );
 
     it('postIntegralEntity', (done) => {
-        service.postIntegralEntity({ name: 'Some one', byte: 255, uShort: 65535 }).subscribe(
+        const d: DemoWebApi_DemoData_Client.IntegralEntity = {
+            name: 'Some one',
+            byte: 255,
+            uShort: 65535
+        };
+
+        service.postIntegralEntity(d).subscribe(
             r => {
                 expect(r.byte).toBe(255);
                 expect(r.uShort).toBe(65535);
@@ -2269,7 +2275,7 @@ describe('Numbers API', () => {
 
 
     it('postUShort', (done) => {
-        service.postByDOfUInt16(65535).subscribe(
+        service.postByDOfUInt16().subscribe(
             r => {
                 expect(r).toBe(65535);
                 done();
