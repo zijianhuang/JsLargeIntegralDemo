@@ -96,7 +96,7 @@ export namespace DemoWebApi_DemoData_Client {
 		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		int?: number | null;
 
-		/** Type: int, -2,147,483,648 to 2,147,483,647 */
+		/** Type: int */
 		itemCount?: number | null;
 
 		/** Type: sbyte, -128 to 127 */
@@ -118,7 +118,7 @@ export namespace DemoWebApi_DemoData_Client {
 
 	export interface MimsPackage {
 
-		/** Type: int, -2,147,483,648 to 2,147,483,647 */
+		/** Type: int */
 		kk?: number | null;
 
 		/**
@@ -425,7 +425,6 @@ export namespace DemoWebApi_Controllers_Client {
 		/**
 		 * If Dt is not defined, add a hour from now
 		 * GET api/DateTypes/NextHourNullable?n={n}&dt={dt}
-		 * @param {number} n Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		getNextHourNullable(n: number | null, dt: Date | null, headersHandler?: () => {[header: string]: string}): Promise<Date> {
 			return Axios.get<Date>(this.baseUri + 'api/DateTypes/NextHourNullable?n=' + n + (dt ? '&dt=' + dt?.toISOString() : ''), { headers: headersHandler ? headersHandler() : undefined }).then(d => d.data);
@@ -441,7 +440,6 @@ export namespace DemoWebApi_Controllers_Client {
 		/**
 		 * If Dt is not defined, add a year from now
 		 * GET api/DateTypes/NextYearNullable?n={n}&dt={dt}
-		 * @param {number} n Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		getNextYearNullable(n: number | null, dt: Date | null, headersHandler?: () => {[header: string]: string}): Promise<Date> {
 			return Axios.get<Date>(this.baseUri + 'api/DateTypes/NextYearNullable?n=' + n + (dt ? '&dt=' + dt?.toISOString() : ''), { headers: headersHandler ? headersHandler() : undefined }).then(d => d.data);
@@ -464,7 +462,6 @@ export namespace DemoWebApi_Controllers_Client {
 
 		/**
 		 * POST api/DateTypes/ForDateOnly
-		 * @param {Date} d Type: DateOnly
 		 * @return {Date} Type: DateOnly
 		 */
 		postDateOnly(d: Date | null, headersHandler?: () => {[header: string]: string}): Promise<Date> {
@@ -591,7 +588,6 @@ export namespace DemoWebApi_Controllers_Client {
 
 		/**
 		 * DELETE api/Entities/{id}
-		 * @param {string} id Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
 		delete(id: string | null, headersHandler?: () => {[header: string]: string}): Promise<AxiosResponse> {
 			return Axios.delete(this.baseUri + 'api/Entities/' + id, { headers: headersHandler ? headersHandler() : undefined });
@@ -599,7 +595,6 @@ export namespace DemoWebApi_Controllers_Client {
 
 		/**
 		 * GET api/Entities/Company/{id}
-		 * @param {string} id Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
 		getCompany(id: string | null, headersHandler?: () => {[header: string]: string}): Promise<DemoWebApi_DemoData_Client.Company> {
 			return Axios.get<DemoWebApi_DemoData_Client.Company>(this.baseUri + 'api/Entities/Company/' + id, { headers: headersHandler ? headersHandler() : undefined }).then(d => d.data);
@@ -649,7 +644,6 @@ export namespace DemoWebApi_Controllers_Client {
 
 		/**
 		 * GET api/Entities/getPerson2/{id}
-		 * @param {string} id Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
 		getPerson2(id: string | null, headersHandler?: () => {[header: string]: string}): Promise<DemoWebApi_DemoData_Client.Person> {
 			return Axios.get<DemoWebApi_DemoData_Client.Person>(this.baseUri + 'api/Entities/getPerson2/' + id, { headers: headersHandler ? headersHandler() : undefined }).then(d => d.data);
@@ -657,7 +651,6 @@ export namespace DemoWebApi_Controllers_Client {
 
 		/**
 		 * PUT api/Entities/link?id={id}&relationship={relationship}
-		 * @param {string} id Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
 		linkPerson(id: string | null, relationship: string | null, person: DemoWebApi_DemoData_Client.Person | null, headersHandler?: () => {[header: string]: string}): Promise<boolean> {
 			return Axios.put<boolean>(this.baseUri + 'api/Entities/link?id=' + id + '&relationship=' + (!relationship ? '' : encodeURIComponent(relationship)), JSON.stringify(person), { headers: headersHandler ? Object.assign(headersHandler(), { 'Content-Type': 'application/json;charset=UTF-8' }): { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
@@ -691,7 +684,6 @@ export namespace DemoWebApi_Controllers_Client {
 
 		/**
 		 * DELETE api/Heroes/{id}
-		 * @param {string} id Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
 		delete(id: string | null, headersHandler?: () => {[header: string]: string}): Promise<AxiosResponse> {
 			return Axios.delete(this.baseUri + 'api/Heroes/' + id, { headers: headersHandler ? headersHandler() : undefined });
@@ -707,7 +699,6 @@ export namespace DemoWebApi_Controllers_Client {
 		/**
 		 * Get a hero. Nullable reference. MaybeNull
 		 * GET api/Heroes/{id}
-		 * @param {string} id Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
 		getHero(id: string | null, headersHandler?: () => {[header: string]: string}): Promise<DemoWebApi_Controllers_Client.Hero> {
 			return Axios.get<DemoWebApi_Controllers_Client.Hero>(this.baseUri + 'api/Heroes/' + id, { headers: headersHandler ? headersHandler() : undefined }).then(d => d.data);
@@ -724,7 +715,6 @@ export namespace DemoWebApi_Controllers_Client {
 		/**
 		 * MaybeNull
 		 * GET api/Heroes/super?id={id}
-		 * @param {string} id Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
 		getSuperHero(id: string | null, headersHandler?: () => {[header: string]: string}): Promise<DemoWebApi_Controllers_Client.SuperHero> {
 			return Axios.get<DemoWebApi_Controllers_Client.SuperHero>(this.baseUri + 'api/Heroes/super?id=' + id, { headers: headersHandler ? headersHandler() : undefined }).then(d => d.data);
@@ -772,7 +762,6 @@ export namespace DemoWebApi_Controllers_Client {
 
 		/**
 		 * GET api/Numbers/byte?d={d}
-		 * @param {number} d Type: byte, 0 to 255
 		 * @return {number} Type: byte, 0 to 255
 		 */
 		getByte(d: number | null, headersHandler?: () => {[header: string]: string}): Promise<number> {
@@ -781,7 +770,6 @@ export namespace DemoWebApi_Controllers_Client {
 
 		/**
 		 * POST api/Numbers/byte
-		 * @param {number} d Type: byte, 0 to 255
 		 * @return {number} Type: byte, 0 to 255
 		 */
 		postByDOfByte(d: number | null, headersHandler?: () => {[header: string]: string}): Promise<number> {
@@ -790,7 +778,6 @@ export namespace DemoWebApi_Controllers_Client {
 
 		/**
 		 * POST api/Numbers/sbyte
-		 * @param {number} d Type: sbyte, -128 to 127
 		 * @return {number} Type: sbyte, -128 to 127
 		 */
 		postByDOfSByte(d: number | null, headersHandler?: () => {[header: string]: string}): Promise<number> {
@@ -799,7 +786,6 @@ export namespace DemoWebApi_Controllers_Client {
 
 		/**
 		 * POST api/Numbers/short
-		 * @param {number} d Type: short, -32,768 to 32,767
 		 * @return {number} Type: short, -32,768 to 32,767
 		 */
 		postByDOfInt16(d: number | null, headersHandler?: () => {[header: string]: string}): Promise<number> {
@@ -808,7 +794,6 @@ export namespace DemoWebApi_Controllers_Client {
 
 		/**
 		 * POST api/Numbers/ushort
-		 * @param {number} d Type: ushort, 0 to 65,535
 		 * @return {number} Type: ushort, 0 to 65,535
 		 */
 		postByDOfUInt16(d: number | null, headersHandler?: () => {[header: string]: string}): Promise<number> {
@@ -817,7 +802,6 @@ export namespace DemoWebApi_Controllers_Client {
 
 		/**
 		 * POST api/Numbers/int
-		 * @param {number} d Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {number} Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		postByDOfInt32(d: number | null, headersHandler?: () => {[header: string]: string}): Promise<number> {
@@ -826,7 +810,6 @@ export namespace DemoWebApi_Controllers_Client {
 
 		/**
 		 * POST api/Numbers/long
-		 * @param {string} d Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {string} Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
 		postByDOfInt64(d: string | null, headersHandler?: () => {[header: string]: string}): Promise<string> {
@@ -835,7 +818,6 @@ export namespace DemoWebApi_Controllers_Client {
 
 		/**
 		 * POST api/Numbers/ulong
-		 * @param {string} d Type: ulong, 0 to 18,446,744,073,709,551,615
 		 * @return {string} Type: ulong, 0 to 18,446,744,073,709,551,615
 		 */
 		postByDOfUInt64(d: string | null, headersHandler?: () => {[header: string]: string}): Promise<string> {
@@ -844,7 +826,6 @@ export namespace DemoWebApi_Controllers_Client {
 
 		/**
 		 * POST api/Numbers/bigInteger
-		 * @param {string} bigInteger Type: BigInteger
 		 * @return {string} Type: BigInteger
 		 */
 		postBigInteger(bigInteger: string | null, headersHandler?: () => {[header: string]: string}): Promise<string> {
@@ -867,7 +848,6 @@ export namespace DemoWebApi_Controllers_Client {
 
 		/**
 		 * POST api/Numbers/int128
-		 * @param {string} int128 Type: Int128, -170141183460469231731687303715884105728 to 170141183460469231731687303715884105727
 		 * @return {string} Type: Int128, -170141183460469231731687303715884105728 to 170141183460469231731687303715884105727
 		 */
 		postInt128(int128: string | null, headersHandler?: () => {[header: string]: string}): Promise<string> {
@@ -876,7 +856,6 @@ export namespace DemoWebApi_Controllers_Client {
 
 		/**
 		 * POST api/Numbers/int64
-		 * @param {string} int64 Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {string} Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
 		postInt64(int64: string | null, headersHandler?: () => {[header: string]: string}): Promise<string> {
@@ -899,7 +878,6 @@ export namespace DemoWebApi_Controllers_Client {
 
 		/**
 		 * POST api/Numbers/uint128
-		 * @param {string} uint128 Type: UInt128, 0 to 340282366920938463463374607431768211455
 		 * @return {string} Type: UInt128, 0 to 340282366920938463463374607431768211455
 		 */
 		postUint128(uint128: string | null, headersHandler?: () => {[header: string]: string}): Promise<string> {
@@ -908,7 +886,6 @@ export namespace DemoWebApi_Controllers_Client {
 
 		/**
 		 * POST api/Numbers/uint64
-		 * @param {string} uint64 Type: ulong, 0 to 18,446,744,073,709,551,615
 		 * @return {string} Type: ulong, 0 to 18,446,744,073,709,551,615
 		 */
 		postUint64(uint64: string | null, headersHandler?: () => {[header: string]: string}): Promise<string> {
@@ -1056,7 +1033,6 @@ export namespace DemoWebApi_Controllers_Client {
 
 		/**
 		 * GET api/SuperDemo/decimal/{d}
-		 * @param {number} d Type: decimal
 		 * @return {number} Type: decimal
 		 */
 		getDecimalSquare(d: number | null, headersHandler?: () => {[header: string]: string}): Promise<number> {
@@ -1185,7 +1161,6 @@ export namespace DemoWebApi_Controllers_Client {
 
 		/**
 		 * GET api/SuperDemo/int/{d}
-		 * @param {number} d Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {number} Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		getIntSquare(d: number | null, headersHandler?: () => {[header: string]: string}): Promise<number> {
@@ -1436,7 +1411,6 @@ export namespace DemoWebApi_Controllers_Client {
 
 		/**
 		 * POST api/SuperDemo/PostEmpty/{i}
-		 * @param {number} i Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		postWithQueryButEmptyBody(s: string | null, i: number | null, headersHandler?: () => {[header: string]: string}): Promise<{item1: string, item2: number}> {
 			return Axios.post<{item1: string, item2: number}>(this.baseUri + 'api/SuperDemo/PostEmpty/' + i, JSON.stringify(s), { headers: headersHandler ? Object.assign(headersHandler(), { 'Content-Type': 'application/json;charset=UTF-8' }): { 'Content-Type': 'application/json;charset=UTF-8' } }).then(d => d.data);
@@ -1449,7 +1423,6 @@ export namespace DemoWebApi_Controllers_Client {
 
 		/**
 		 * GET api/TextData/AthletheSearch?take={take}&skip={skip}&order={order}&sort={sort}&search={search}
-		 * @param {number} skip Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		athletheSearch(take: number | null, skip: number | null, order: string | null, sort: string | null, search: string | null, headersHandler?: () => {[header: string]: string}): Promise<string> {
 			return Axios.get(this.baseUri + 'api/TextData/AthletheSearch?' + (take ? 'take=' + take.toString() : '') + '&skip=' + skip + '&order=' + (!order ? '' : encodeURIComponent(order)) + '&sort=' + (!sort ? '' : encodeURIComponent(sort)) + '&search=' + (!search ? '' : encodeURIComponent(search)), { headers: headersHandler ? headersHandler() : undefined, responseType: 'text' }).then(d => d.status == 204 ? null : d.data);
@@ -1710,7 +1683,6 @@ export namespace DemoWebApi_Controllers_Client {
 
 		/**
 		 * DELETE api/Values/{id}
-		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		delete(id: number | null, headersHandler?: () => {[header: string]: string}): Promise<AxiosResponse> {
 			return Axios.delete(this.baseUri + 'api/Values/' + id, { headers: headersHandler ? headersHandler() : undefined });
@@ -1727,7 +1699,6 @@ export namespace DemoWebApi_Controllers_Client {
 		/**
 		 * Get by both Id and name
 		 * GET api/Values/{id}?name={name}
-		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		getByIdOfInt32AndNameOfString(id: number | null, name: string | null, headersHandler?: () => {[header: string]: string}): Promise<string> {
 			return Axios.get(this.baseUri + 'api/Values/' + id + '?name=' + (!name ? '' : encodeURIComponent(name)), { headers: headersHandler ? headersHandler() : undefined, responseType: 'text' }).then(d => d.status == 204 ? null : d.data);
@@ -1744,7 +1715,6 @@ export namespace DemoWebApi_Controllers_Client {
 		/**
 		 * Get by Id
 		 * GET api/Values/{id}
-		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		getByIdOfInt32(id: number | null, headersHandler?: () => {[header: string]: string}): Promise<string> {
 			return Axios.get(this.baseUri + 'api/Values/' + id, { headers: headersHandler ? headersHandler() : undefined, responseType: 'text' }).then(d => d.status == 204 ? null : d.data);
@@ -1768,7 +1738,6 @@ export namespace DemoWebApi_Controllers_Client {
 		/**
 		 * Update with valjue
 		 * PUT api/Values/{id}
-		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		put(id: number | null, value: string | null, headersHandler?: () => {[header: string]: string}): Promise<AxiosResponse> {
 			return Axios.put(this.baseUri + 'api/Values/' + id, JSON.stringify(value), { headers: headersHandler ? Object.assign(headersHandler(), { 'Content-Type': 'application/json;charset=UTF-8' }): { 'Content-Type': 'application/json;charset=UTF-8' },  responseType: 'text' });

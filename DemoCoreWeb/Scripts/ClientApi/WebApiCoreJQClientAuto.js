@@ -155,7 +155,6 @@ var DemoWebApi_Controllers_Client;
         /**
          * If Dt is not defined, add a hour from now
          * GET api/DateTypes/NextHourNullable?n={n}&dt={dt}
-         * @param {number} n Type: int, -2,147,483,648 to 2,147,483,647
          */
         getNextHourNullable(n, dt, callback, headersHandler) {
             this.httpClient.get(this.baseUri + 'api/DateTypes/NextHourNullable?n=' + n + (dt ? '&dt=' + dt?.toISOString() : ''), callback, this.error, this.statusCode, headersHandler);
@@ -169,7 +168,6 @@ var DemoWebApi_Controllers_Client;
         /**
          * If Dt is not defined, add a year from now
          * GET api/DateTypes/NextYearNullable?n={n}&dt={dt}
-         * @param {number} n Type: int, -2,147,483,648 to 2,147,483,647
          */
         getNextYearNullable(n, dt, callback, headersHandler) {
             this.httpClient.get(this.baseUri + 'api/DateTypes/NextYearNullable?n=' + n + (dt ? '&dt=' + dt?.toISOString() : ''), callback, this.error, this.statusCode, headersHandler);
@@ -189,7 +187,6 @@ var DemoWebApi_Controllers_Client;
         }
         /**
          * POST api/DateTypes/ForDateOnly
-         * @param {Date} d Type: DateOnly
          * @return {Date} Type: DateOnly
          */
         postDateOnly(d, callback, headersHandler) {
@@ -308,14 +305,12 @@ var DemoWebApi_Controllers_Client;
         }
         /**
          * DELETE api/Entities/{id}
-         * @param {string} id Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
          */
         delete(id, callback, headersHandler) {
             this.httpClient.delete(this.baseUri + 'api/Entities/' + id, callback, this.error, this.statusCode, headersHandler);
         }
         /**
          * GET api/Entities/Company/{id}
-         * @param {string} id Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
          */
         getCompany(id, callback, headersHandler) {
             this.httpClient.get(this.baseUri + 'api/Entities/Company/' + id, callback, this.error, this.statusCode, headersHandler);
@@ -359,14 +354,12 @@ var DemoWebApi_Controllers_Client;
         }
         /**
          * GET api/Entities/getPerson2/{id}
-         * @param {string} id Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
          */
         getPerson2(id, callback, headersHandler) {
             this.httpClient.get(this.baseUri + 'api/Entities/getPerson2/' + id, callback, this.error, this.statusCode, headersHandler);
         }
         /**
          * PUT api/Entities/link?id={id}&relationship={relationship}
-         * @param {string} id Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
          */
         linkPerson(id, relationship, person, callback, headersHandler) {
             this.httpClient.put(this.baseUri + 'api/Entities/link?id=' + id + '&relationship=' + (!relationship ? '' : encodeURIComponent(relationship)), person, callback, this.error, this.statusCode, 'application/json;charset=UTF-8', headersHandler);
@@ -404,7 +397,6 @@ var DemoWebApi_Controllers_Client;
         }
         /**
          * DELETE api/Heroes/{id}
-         * @param {string} id Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
          */
         delete(id, callback, headersHandler) {
             this.httpClient.delete(this.baseUri + 'api/Heroes/' + id, callback, this.error, this.statusCode, headersHandler);
@@ -418,7 +410,6 @@ var DemoWebApi_Controllers_Client;
         /**
          * Get a hero. Nullable reference. MaybeNull
          * GET api/Heroes/{id}
-         * @param {string} id Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
          */
         getHero(id, callback, headersHandler) {
             this.httpClient.get(this.baseUri + 'api/Heroes/' + id, callback, this.error, this.statusCode, headersHandler);
@@ -433,7 +424,6 @@ var DemoWebApi_Controllers_Client;
         /**
          * MaybeNull
          * GET api/Heroes/super?id={id}
-         * @param {string} id Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
          */
         getSuperHero(id, callback, headersHandler) {
             this.httpClient.get(this.baseUri + 'api/Heroes/super?id=' + id, callback, this.error, this.statusCode, headersHandler);
@@ -484,7 +474,6 @@ var DemoWebApi_Controllers_Client;
         }
         /**
          * GET api/Numbers/byte?d={d}
-         * @param {number} d Type: byte, 0 to 255
          * @return {number} Type: byte, 0 to 255
          */
         getByte(d, callback, headersHandler) {
@@ -492,7 +481,6 @@ var DemoWebApi_Controllers_Client;
         }
         /**
          * POST api/Numbers/byte
-         * @param {number} d Type: byte, 0 to 255
          * @return {number} Type: byte, 0 to 255
          */
         postByDOfByte(d, callback, headersHandler) {
@@ -500,7 +488,6 @@ var DemoWebApi_Controllers_Client;
         }
         /**
          * POST api/Numbers/sbyte
-         * @param {number} d Type: sbyte, -128 to 127
          * @return {number} Type: sbyte, -128 to 127
          */
         postByDOfSByte(d, callback, headersHandler) {
@@ -508,7 +495,6 @@ var DemoWebApi_Controllers_Client;
         }
         /**
          * POST api/Numbers/short
-         * @param {number} d Type: short, -32,768 to 32,767
          * @return {number} Type: short, -32,768 to 32,767
          */
         postByDOfInt16(d, callback, headersHandler) {
@@ -516,7 +502,6 @@ var DemoWebApi_Controllers_Client;
         }
         /**
          * POST api/Numbers/ushort
-         * @param {number} d Type: ushort, 0 to 65,535
          * @return {number} Type: ushort, 0 to 65,535
          */
         postByDOfUInt16(d, callback, headersHandler) {
@@ -524,7 +509,6 @@ var DemoWebApi_Controllers_Client;
         }
         /**
          * POST api/Numbers/int
-         * @param {number} d Type: int, -2,147,483,648 to 2,147,483,647
          * @return {number} Type: int, -2,147,483,648 to 2,147,483,647
          */
         postByDOfInt32(d, callback, headersHandler) {
@@ -532,7 +516,6 @@ var DemoWebApi_Controllers_Client;
         }
         /**
          * POST api/Numbers/long
-         * @param {string} d Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
          * @return {string} Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
          */
         postByDOfInt64(d, callback, headersHandler) {
@@ -540,7 +523,6 @@ var DemoWebApi_Controllers_Client;
         }
         /**
          * POST api/Numbers/ulong
-         * @param {string} d Type: ulong, 0 to 18,446,744,073,709,551,615
          * @return {string} Type: ulong, 0 to 18,446,744,073,709,551,615
          */
         postByDOfUInt64(d, callback, headersHandler) {
@@ -548,7 +530,6 @@ var DemoWebApi_Controllers_Client;
         }
         /**
          * POST api/Numbers/bigInteger
-         * @param {string} bigInteger Type: BigInteger
          * @return {string} Type: BigInteger
          */
         postBigInteger(bigInteger, callback, headersHandler) {
@@ -568,7 +549,6 @@ var DemoWebApi_Controllers_Client;
         }
         /**
          * POST api/Numbers/int128
-         * @param {string} int128 Type: Int128, -170141183460469231731687303715884105728 to 170141183460469231731687303715884105727
          * @return {string} Type: Int128, -170141183460469231731687303715884105728 to 170141183460469231731687303715884105727
          */
         postInt128(int128, callback, headersHandler) {
@@ -576,7 +556,6 @@ var DemoWebApi_Controllers_Client;
         }
         /**
          * POST api/Numbers/int64
-         * @param {string} int64 Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
          * @return {string} Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
          */
         postInt64(int64, callback, headersHandler) {
@@ -596,7 +575,6 @@ var DemoWebApi_Controllers_Client;
         }
         /**
          * POST api/Numbers/uint128
-         * @param {string} uint128 Type: UInt128, 0 to 340282366920938463463374607431768211455
          * @return {string} Type: UInt128, 0 to 340282366920938463463374607431768211455
          */
         postUint128(uint128, callback, headersHandler) {
@@ -604,7 +582,6 @@ var DemoWebApi_Controllers_Client;
         }
         /**
          * POST api/Numbers/uint64
-         * @param {string} uint64 Type: ulong, 0 to 18,446,744,073,709,551,615
          * @return {string} Type: ulong, 0 to 18,446,744,073,709,551,615
          */
         postUint64(uint64, callback, headersHandler) {
@@ -750,7 +727,6 @@ var DemoWebApi_Controllers_Client;
         }
         /**
          * GET api/SuperDemo/decimal/{d}
-         * @param {number} d Type: decimal
          * @return {number} Type: decimal
          */
         getDecimalSquare(d, callback, headersHandler) {
@@ -862,7 +838,6 @@ var DemoWebApi_Controllers_Client;
         }
         /**
          * GET api/SuperDemo/int/{d}
-         * @param {number} d Type: int, -2,147,483,648 to 2,147,483,647
          * @return {number} Type: int, -2,147,483,648 to 2,147,483,647
          */
         getIntSquare(d, callback, headersHandler) {
@@ -1081,7 +1056,6 @@ var DemoWebApi_Controllers_Client;
         }
         /**
          * POST api/SuperDemo/PostEmpty/{i}
-         * @param {number} i Type: int, -2,147,483,648 to 2,147,483,647
          */
         postWithQueryButEmptyBody(s, i, callback, headersHandler) {
             this.httpClient.post(this.baseUri + 'api/SuperDemo/PostEmpty/' + i, s, callback, this.error, this.statusCode, 'application/json;charset=UTF-8', headersHandler);
@@ -1101,7 +1075,6 @@ var DemoWebApi_Controllers_Client;
         }
         /**
          * GET api/TextData/AthletheSearch?take={take}&skip={skip}&order={order}&sort={sort}&search={search}
-         * @param {number} skip Type: int, -2,147,483,648 to 2,147,483,647
          */
         athletheSearch(take, skip, order, sort, search, callback, headersHandler) {
             this.httpClient.get(this.baseUri + 'api/TextData/AthletheSearch?' + (take ? 'take=' + take.toString() : '') + '&skip=' + skip + '&order=' + (!order ? '' : encodeURIComponent(order)) + '&sort=' + (!sort ? '' : encodeURIComponent(sort)) + '&search=' + (!search ? '' : encodeURIComponent(search)), callback, this.error, this.statusCode, headersHandler);
@@ -1344,7 +1317,6 @@ var DemoWebApi_Controllers_Client;
         }
         /**
          * DELETE api/Values/{id}
-         * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
          */
         delete(id, callback, headersHandler) {
             this.httpClient.delete(this.baseUri + 'api/Values/' + id, callback, this.error, this.statusCode, headersHandler);
@@ -1359,7 +1331,6 @@ var DemoWebApi_Controllers_Client;
         /**
          * Get by both Id and name
          * GET api/Values/{id}?name={name}
-         * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
          */
         getByIdOfInt32AndNameOfString(id, name, callback, headersHandler) {
             this.httpClient.get(this.baseUri + 'api/Values/' + id + '?name=' + (!name ? '' : encodeURIComponent(name)), callback, this.error, this.statusCode, headersHandler);
@@ -1374,7 +1345,6 @@ var DemoWebApi_Controllers_Client;
         /**
          * Get by Id
          * GET api/Values/{id}
-         * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
          */
         getByIdOfInt32(id, callback, headersHandler) {
             this.httpClient.get(this.baseUri + 'api/Values/' + id, callback, this.error, this.statusCode, headersHandler);
@@ -1395,7 +1365,6 @@ var DemoWebApi_Controllers_Client;
         /**
          * Update with valjue
          * PUT api/Values/{id}
-         * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
          */
         put(id, value, callback, headersHandler) {
             this.httpClient.put(this.baseUri + 'api/Values/' + id, value, callback, this.error, this.statusCode, 'application/json;charset=UTF-8', headersHandler);
